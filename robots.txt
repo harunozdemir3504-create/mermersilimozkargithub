@@ -1,2 +1,4 @@
 User-agent: *
+Allow: /
+
 Sitemap: https://harunozdemir3504-create.github.io/mermersilimozkargithub/sitemap.xml
