@@ -13,33 +13,7 @@
     <title>Özkar Mermer | Premium Doğal Taşlar</title>
     <link rel="stylesheet" href="style.css">
     <style>
-    /* --- KOLEKSİYON 4. KARTI SOLA HİZALAMA --- */
-    .galeri {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important; /* Kesin olarak 3 sütun yapar */
-        gap: 30px !important;
-        width: 100%;
-        padding: 20px 0;
-    }
-
-    .kart {
-        width: 100% !important;
-        margin: 0 !important;
-    }
-
-    /* Ekran küçüldüğünde (Tablet ve Telefon) bozulmaması için ufak bir ayar: */
-    @media (max-width: 992px) {
-        .galeri {
-            grid-template-columns: repeat(2, 1fr) !important; /* Tablette 2 üstte, 2 altta yapar */
-        }
-    }
-    @media (max-width: 768px) {
-        .galeri {
-            grid-template-columns: 1fr !important; /* Telefonda hepsini alt alta dizer */
-        }
-    }
    
- 
 
     /* Özkar Mermer Özel Tasarım */
     .ozkar-silim-container {
@@ -380,7 +354,30 @@
                 </div>
                 <h3>Havuz Kenarı Traverten ve Mermer Silimi</h3>
                 <p>Dış mekan ve havuz çevresindeki doğal taşlarınızı dış etkenlere karşı koruyor, pürüzsüz ve ayna parlaklığında yüzeylere dönüştürüyoruz.</p>
-            </div>
+            </div>      
+        <style>
+    /* --- KOLEKSİYON KARTLARI KESİN ÇÖZÜM --- */
+    .galeri {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* Sadece ve sadece 3 sütuna izin verir */
+        gap: 30px !important; /* Kartlar arası boşluk */
+        align-items: start !important;
+    }
+
+    .kart {
+        width: 100% !important; /* Sadece bulunduğu sütunun (1fr) içini kaplar, dışarı taşamaz */
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Mobilde bozulmaması için */
+    @media (max-width: 992px) {
+        .galeri { grid-template-columns: repeat(2, 1fr) !important; } /* Tablette 2'li */
+    }
+    @media (max-width: 768px) {
+        .galeri { grid-template-columns: 1fr !important; } /* Telefonda alt alta */
+    }
+</style>
     </section>
 
     <footer>
