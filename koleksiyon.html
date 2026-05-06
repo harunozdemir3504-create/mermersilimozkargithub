@@ -13,7 +13,7 @@
             font-family: 'Arial', sans-serif; 
             background: hsl(0, 10%, 94%); 
             margin: 0; 
-            padding: 0; /* padding'i body'den kaldırdık ki navbar tam otursun */
+            padding: 0; 
         }
         
         /* HEADER - NAVBAR ALANI */
@@ -22,7 +22,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
-            background-color: #111; /* Navbar arka planını belirginleştirelim */
+            background-color: #111;
             color: white;
         }
 
@@ -35,7 +35,7 @@
         }
 
         .logo-ozkar { color: #ffffff; }
-        .logo-mermer { color: #b08d57; /* Siyaha karışmasın diye altın rengi yaptık */ }
+        .logo-mermer { color: #b08d57; }
 
         .nav-links {
             list-style: none;
@@ -75,13 +75,13 @@
             padding: 0 20px;
         }
         
-        .baslik-alani h2 { color: #1a1a1a; text-transform: uppercase; }
+        .baslik-alani h2 { color: #1a1a1a; text-transform: uppercase; margin-bottom: 5px;}
         .alt-cizgi { width: 60px; height: 4px; background: #b08d57; margin: 10px auto 40px; }
 
-        /* GALERİ KARTLARI (Üstteki 3'lü) */
+        /* GALERİ KARTLARI (3'LÜ IZGARA) */
         .galeri { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            grid-template-columns: repeat(3, 1fr); 
             gap: 25px; 
             margin-bottom: 50px;
         }
@@ -91,6 +91,8 @@
             padding: 15px; 
             border-radius: 8px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            display: flex;
+            flex-direction: column;
         }
         
         .resim-alani img { 
@@ -100,6 +102,7 @@
             cursor: pointer; 
             transition: transform 0.3s, opacity 0.3s; 
             border-radius: 6px;
+            background-color: #eee; 
         }
         
         .resim-alani img:hover { 
@@ -107,10 +110,10 @@
             transform: scale(1.02);
         }
 
-        .kart h3 { color: #1a1a1a; margin-bottom: 10px; }
-        .kart p { color: #666; font-size: 0.95rem; line-height: 1.5; }
+        .kart h3 { color: #1a1a1a; margin: 15px 0 10px; font-size: 1.2rem;}
+        .kart p { color: #666; font-size: 0.95rem; line-height: 1.5; margin: 0; }
 
-        /* ÖNE ÇIKAN PROJE KESİN ÇÖZÜM (Esnemez, Yamulmaz) */
+        /* ÖNE ÇIKAN PROJE KESİN ÇÖZÜM */
         .one-cikan-proje {
             max-width: 1000px;
             margin: 0 auto 50px;
@@ -120,13 +123,13 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             display: flex;
             flex-wrap: wrap;
-            text-align: left; /* Yazıları sola yasla */
+            text-align: left;
         }
 
         .proje-resim {
             flex: 1 1 50%;
             min-width: 300px;
-            min-height: 350px; /* Resmin yamulmasını engelleyen sihirli dokunuş */
+            min-height: 350px; 
             position: relative;
         }
 
@@ -136,9 +139,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Resmi kutuya orantılı ve keserek oturtur */
+            object-fit: cover; 
             cursor: pointer;
             transition: 0.3s;
+            background-color: #eee;
         }
 
         .proje-resim img:hover { opacity: 0.85; }
@@ -182,7 +186,7 @@
             z-index: 9999;
             left: 0; top: 0;
             width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.85); /* Daha şık karanlık arka plan */
+            background-color: rgba(0, 0, 0, 0.85); 
         }
         
         .modal-icerik {
@@ -194,6 +198,7 @@
             border: 3px solid #fff;
             border-radius: 8px;
             box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            object-fit: contain;
         }
         
         .kapat {
@@ -209,9 +214,13 @@
         .kapat:hover { color: #b08d57; }
 
         /* MOBİL UYUMLULUK */
+        @media (max-width: 992px) {
+            .galeri { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 768px) {
             .navbar { flex-direction: column; gap: 15px; padding: 20px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .galeri { grid-template-columns: 1fr; }
             .proje-resim { min-height: 250px; position: relative; }
             .proje-metin { padding: 30px 20px; text-align: center; }
         }
@@ -239,10 +248,11 @@
             <div class="alt-cizgi"></div>
         </div>
         
+        <!-- ÜST 3'LÜ GALERİ -->
         <div class="galeri">
             <div class="kart">
                 <div class="resim-alani">
-                    <img src="traven.jpg" alt="Dolgulu ve Cilalı Traverten">
+                    <img src="traven.jpg" alt="Dolgulu ve Cilalı Traverten" class="buyutulebilir">
                 </div>
                 <h3>Dolgulu ve Cilalı Traverten</h3>
                 <p>Travertenin doğal zarafetini, pürüzsüz ve cam gibi bir yüzeyle buluşturuyoruz.</p>
@@ -250,7 +260,7 @@
 
             <div class="kart">
                 <div class="resim-alani">
-                    <img src="reno.jpg" alt="Nero Marquina">
+                    <img src="reno.jpg" alt="Nero Marquina" class="buyutulebilir">
                 </div>
                 <h3>Nero Marquina</h3>
                 <p>Koyu tonların asaleti.</p>
@@ -258,34 +268,30 @@
 
             <div class="kart">
                 <div class="resim-alani">
-                    <img src="karma.jpg" alt="Lüks Doğal Taş Kaplamalar">
+                    <img src="karma.jpg" alt="Lüks Doğal Taş Kaplamalar" class="buyutulebilir">
                 </div>
                 <h3>Lüks Doğal Taş Kaplamalar</h3>
                 <p>Tüm doğal yüzeylerde cam gibi şeffaf bir parlaklık.</p>
             </div>
         </div>
 
-        <!-- ÖNE ÇIKAN PROJE BÖLÜMÜ -->
+        <!-- ÖNE ÇIKAN PROJE BÖLÜMÜ (BÜYÜK YATAY KART) -->
         <div class="one-cikan-proje">
-            
             <div class="proje-resim">
                 <img src="parlakmermer.jpg" alt="İzmir mermer silim - Havuz Kenarı" class="buyutulebilir">
             </div>
-            
             <div class="proje-metin">
                 <span class="ust-baslik">Öne Çıkan Referansımız</span>
                 <h3>Havuz Kenarı Traverten ve Mermer Silimi</h3>
                 <p>Dış mekan ve havuz çevresindeki doğal taşlarınızı yıpratıcı dış etkenlere karşı koruma altına alıyoruz. Özel kristalize cila işlemimizle pürüzsüz ve ayna parlaklığında yüzeylere dönüştürüyoruz.</p>
             </div>
-            
         </div>
-        <!-- ALT KISIM: YENİ 3'LÜ GALERİ EKLENTİSİ -->
-        <div class="galeri" style="margin-top: 50px;">
-            
+
+        <!-- ALT 3'LÜ GALERİ (YENİ EKLENEN RESİMLER) -->
+        <div class="galeri">
             <div class="kart">
                 <div class="resim-alani">
-                    <!-- Havuz kenarı fotoğrafının adını buraya yazın -->
-                    <img src="havuz-kenari-2.jpg" alt="Açık Alan Zemin Silimi" class="buyutulebilir">
+                    <img src="Medya (2)_2.jpg" alt="Açık Alan Zemin Silimi" class="buyutulebilir">
                 </div>
                 <h3>Açık Alan Zemin Silimi</h3>
                 <p>Havuz kenarı ve teras gibi dış mekan zeminlerinizi zorlu hava koşullarına karşı koruyor, ilk günkü temizliğine ve parlaklığına kavuşturuyoruz.</p>
@@ -293,8 +299,7 @@
 
             <div class="kart">
                 <div class="resim-alani">
-                    <!-- Siyah masa fotoğrafının adını buraya yazın -->
-                    <img src="siyah-mermer-masa.jpg" alt="Özel Tasarım Mermer Masa Parlatma" class="buyutulebilir">
+                    <img src="Medya (4).jpg" alt="Özel Tasarım Mermer Masa Parlatma" class="buyutulebilir">
                 </div>
                 <h3>Mermer Masa Restorasyonu</h3>
                 <p>Koyu renkli özel tasarım mermer masalarınızdaki matlaşmayı ve çizikleri gideriyor, ayna gibi yansıma sağlayan özel cila uyguluyoruz.</p>
@@ -302,14 +307,13 @@
 
             <div class="kart">
                 <div class="resim-alani">
-                    <!-- Kapalı alan salon fotoğrafının adını buraya yazın -->
-                    <img src="kapali-salon.jpg" alt="Kapalı Alan Salon Zemin Silimi" class="buyutulebilir">
+                    <img src="Medya (3)_2.jpg" alt="Kapalı Alan Salon Zemin Silimi" class="buyutulebilir">
                 </div>
                 <h3>Kapalı Alan Zemin Silimi</h3>
                 <p>Geniş metrekareli kapalı alanlarınızda, çevreye ve eşyalarınıza zarar vermeden tozsuz, pürüzsüz ve kusursuz bir silim işlemi gerçekleştiriyoruz.</p>
             </div>
-            
         </div>
+
     </section>
 
     <!-- Modal (Resim Büyütme) Ekranı -->
@@ -324,8 +328,8 @@
         var modalImg = document.getElementById("buyukResim");
         var kapatButonu = document.getElementsByClassName("kapat")[0];
 
-        // Hem üstteki 3 resim hem de alttaki büyük resim için seçici
-        var resimler = document.querySelectorAll(".resim-alani img, .buyutulebilir");
+        // "buyutulebilir" class'ına sahip tüm resimleri bul
+        var resimler = document.querySelectorAll(".buyutulebilir");
 
         // Her resme tıklandığında çalışacak fonksiyon
         resimler.forEach(function(img) {
