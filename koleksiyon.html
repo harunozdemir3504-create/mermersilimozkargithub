@@ -1,116 +1,201 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <link rel="canonical" href="https://harunozdemir3504-create.github.io/mermersilimozkargithub/" />
-    
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Özdemir Mermer Koleksiyon</title>
     <title>Projelerimiz ve Koleksiyon | Özkar Mermer</title>
     <meta name="description" content="Özkar Mermer olarak tamamladığımız başarılı zemin restorasyonu, mermer temizleme ve parlatma projelerimizi inceleyin. Profesyonel işçiliğimizin örnekleri burada.">
-    <style>
-        /* Genel Sıfırlama */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif; /* Daha iyi görünüm için 'Inter' veya 'Poppins' kullanabilirsin */
-}
-
-/* Header Alanı */
-.navbar {
+    <link rel="canonical" href="https://harunozdemir3504-create.github.io/mermersilimozkargithub/" />
     
-    display: flex;
-    justify-content: space-between; /* Logo sola, menü sağa */
-    align-items: center;
-    padding: 15px 5%;
-    color: white;
-}
+    <style>
+        /* GENEL SIFIRLAMA VE TASARIM */
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: hsl(0, 10%, 94%); 
+            margin: 0; 
+            padding: 0; /* padding'i body'den kaldırdık ki navbar tam otursun */
+        }
+        
+        /* HEADER - NAVBAR ALANI */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #111; /* Navbar arka planını belirginleştirelim */
+            color: white;
+        }
 
-/* Logo Stili */
-.logo {
-    font-weight: bold;
-    font-size: 22px;
-    letter-spacing: 1px;
-}
+        .logo {
+            font-weight: 800;
+            font-size: 32px;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-decoration: none;
+        }
 
-.logo-ozkar {
-    color: #4a5dff; /* Görseldeki mavi tonu */
-}
+        .logo-ozkar { color: #ffffff; }
+        .logo-mermer { color: #b08d57; /* Siyaha karışmasın diye altın rengi yaptık */ }
 
-.logo-mermer {
-    color: #030202;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Navigasyon Linkleri */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px; /* Butonlar arası boşluk */
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
+        .nav-links li a {
+            text-decoration: none;
+            color: #ccc;
+            font-size: 15px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
 
-.nav-links li a {
-    text-decoration: none;
-    color: #050404; /* Pasif yazı rengi */
-    font-size: 14px;
-    transition: 0.3s;
-}
+        .nav-links li a:hover, .nav-links li a.active {
+            color: #b08d57;
+        }
 
-/* Mouse ile üzerine gelince veya Aktif sayfa */
-.nav-links li a:hover, .nav-links li a.active {
-    color: #e5c37e; /* Görseldeki altın/kahverengi tonu */
-}
+        .contact-btn {
+            background-color: #b08d57;
+            padding: 10px 20px;
+            border-radius: 4px;
+            color: #fff !important;
+        }
 
-/* İletişim Butonu (Kutucuklu yapı) */
-.contact-btn {
-    background-color: #1a1a1a; /* Koyu gri/siyah kutu */
-    padding: 10px 20px;
-    border-radius: 4px;
-    color: white !important;
-}
+        .contact-btn:hover { background-color: #8c6e40; }
 
-.contact-btn:hover {
-    background-color: #000000;
-}
-        /* GENEL TASARIM */
-        body { font-family: sans-serif; background: hsl(0, 10%, 94%); margin: 0; padding: 20px; }
-        .urunler { max-width: 1200px; margin: 0 auto; text-align: center; }
-        .baslik-alani h2 { color: #212196; text-transform: uppercase; }
+        /* KOLEKSİYON ALANI */
+        .urunler { 
+            max-width: 1200px; 
+            margin: 40px auto; 
+            text-align: center; 
+            padding: 0 20px;
+        }
+        
+        .baslik-alani h2 { color: #1a1a1a; text-transform: uppercase; }
         .alt-cizgi { width: 60px; height: 4px; background: #b08d57; margin: 10px auto 40px; }
 
-        /* GALERİ KARTLARI */
-        .galeri { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .kart { background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        /* GALERİ KARTLARI (Üstteki 3'lü) */
+        .galeri { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
+            margin-bottom: 50px;
+        }
+        
+        .kart { 
+            background: #fff; 
+            padding: 15px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+        }
+        
         .resim-alani img { 
             width: 100%; 
-            height: 200px; 
+            height: 220px; 
             object-fit: cover; 
-            cursor: pointer; /* Tıklanabilir olduğunu gösterir */
-            transition: 0.3s; 
-            border-radius: 4px;
+            cursor: pointer; 
+            transition: transform 0.3s, opacity 0.3s; 
+            border-radius: 6px;
         }
-        .resim-alani img:hover { opacity: 0.8; }
+        
+        .resim-alani img:hover { 
+            opacity: 0.8; 
+            transform: scale(1.02);
+        }
+
+        .kart h3 { color: #1a1a1a; margin-bottom: 10px; }
+        .kart p { color: #666; font-size: 0.95rem; line-height: 1.5; }
+
+        /* ÖNE ÇIKAN PROJE KESİN ÇÖZÜM (Esnemez, Yamulmaz) */
+        .one-cikan-proje {
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left; /* Yazıları sola yasla */
+        }
+
+        .proje-resim {
+            flex: 1 1 50%;
+            min-width: 300px;
+            min-height: 350px; /* Resmin yamulmasını engelleyen sihirli dokunuş */
+            position: relative;
+        }
+
+        .proje-resim img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Resmi kutuya orantılı ve keserek oturtur */
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .proje-resim img:hover { opacity: 0.85; }
+
+        .proje-metin {
+            flex: 1 1 50%;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .proje-metin .ust-baslik {
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .proje-metin h3 {
+            color: #b08d57;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .proje-metin p {
+            color: #555;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            margin: 0;
+        }
 
         /* MODAL (BÜYÜTME EKRANI) AYARLARI */
         .modal {
-            display: none; /* Sayfa açıldığında gizli */
+            display: none; 
             position: fixed;
             z-index: 9999;
             left: 0; top: 0;
             width: 100%; height: 100%;
-            background-color: rgba(239, 233, 233, 0.9); /* Arka planı karartır */
+            background-color: rgba(0, 0, 0, 0.85); /* Daha şık karanlık arka plan */
         }
+        
         .modal-icerik {
             margin: auto;
             display: block;
             max-width: 90%;
-            max-height: 85vh; /* Ekranın %85'inden büyük olmasın */
-            margin-top: 50px;
+            max-height: 85vh; 
+            margin-top: 5vh;
             border: 3px solid #fff;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
         }
+        
         .kapat {
             position: absolute;
             top: 15px; right: 35px;
@@ -118,70 +203,36 @@ body {
             font-size: 50px;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
         }
+        
+        .kapat:hover { color: #b08d57; }
 
-        /* --- ÖZKAR MERMER LOGO VE MENÜ DÜZENLEMESİ --- */
-
-/* Bilgisayar görünümü için logo ve menü */
-.navbar {
-    flex-direction: row !important; /* Logo ve menüyü yan yana tutar */
-    justify-content: space-between;
-}
-
-.logo { 
-    font-size: 36px !important; /* Logoyu belirgin şekilde büyüttük */
-    font-weight: 800;
-    color: #ffffff; 
-    flex-shrink: 0; /* Logonun küçülmesini engeller */
-}
-
-.menu { 
-    display: flex !important;
-    flex-direction: row !important; /* Butonları yan yana tutar */
-    gap: 20px;
-    margin-left: auto;
-}
-
-/* Telefon görünümü için ince ayar */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column !important; /* Mobilde logo üstte, menü altta kalsın */
-        align-items: center;
-        gap: 15px;
-    }
-
-    .logo {
-        font-size: 32px !important; /* Mobilde de büyük ama ekrana sığacak boyutta */
-        text-align: center;
-    }
-
-    .menu {
-        justify-content: center;
-        width: 100%;
-        gap: 10px; /* Butonlar arası boşluk */
-    }
-
-    .menu a {
-        font-size: 14px; /* Buton yazılarını bir tık küçülttük ki yan yana sığsınlar */
-    }
-}
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; padding: 20px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .proje-resim { min-height: 250px; position: relative; }
+            .proje-metin { padding: 30px 20px; text-align: center; }
+        }
     </style>
-    
 </head>
 <body>
-<header class="navbar">
-    <div class="logo">
-        <span class="logo-ozkar">ÖZKAR</span><span class="logo-mermer">MERMER</span>
-    </div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="index.html">Anasayfa</a></li>
-            <li><a href="koleksiyon.html">Koleksiyon</a></li>
-            <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
-            <li><a href="iletisim.html" class="contact-btn">İletişim</a></li>
-        </ul>
-    </nav>
-</header>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-ozkar">ÖZKAR</span><span class="logo-mermer">MERMER</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="koleksiyon.html" class="active">Koleksiyon</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="iletisim.html" class="contact-btn">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section id="koleksiyon" class="urunler">
         <div class="baslik-alani">
             <h2>Özel Koleksiyonumuz</h2>
@@ -213,22 +264,24 @@ body {
                 <p>Tüm doğal yüzeylerde cam gibi şeffaf bir parlaklık.</p>
             </div>
         </div>
-        <!-- ÖNE ÇIKAN PROJE BÖLÜMÜ (3'lü galerinin hemen altına ekleyin) -->
-        <div class="one-cikan-proje" style="max-width: 1000px; margin: 50px auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: flex; flex-wrap: wrap;">
+
+        <!-- ÖNE ÇIKAN PROJE BÖLÜMÜ -->
+        <div class="one-cikan-proje">
             
-            <div style="flex: 1 1 50%; min-width: 300px;">
-                <img src="parlakmermer.jpg" alt="İzmir mermer silim - Havuz Kenarı" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div class="proje-resim">
+                <img src="parlakmermer.jpg" alt="İzmir mermer silim - Havuz Kenarı" class="buyutulebilir">
             </div>
             
-            <div style="flex: 1 1 50%; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
-                <span style="color: #999; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 10px;">Öne Çıkan Referansımız</span>
-                <h3 style="color: #b08d57; font-size: 1.8rem; margin-top: 0; margin-bottom: 15px;">Havuz Kenarı Traverten ve Mermer Silimi</h3>
-                <p style="color: #555; line-height: 1.7; font-size: 1.05rem;">Dış mekan ve havuz çevresindeki doğal taşlarınızı yıpratıcı dış etkenlere karşı koruma altına alıyoruz. Özel kristalize cila işlemimizle pürüzsüz ve ayna parlaklığında yüzeylere dönüştürüyoruz.</p>
+            <div class="proje-metin">
+                <span class="ust-baslik">Öne Çıkan Referansımız</span>
+                <h3>Havuz Kenarı Traverten ve Mermer Silimi</h3>
+                <p>Dış mekan ve havuz çevresindeki doğal taşlarınızı yıpratıcı dış etkenlere karşı koruma altına alıyoruz. Özel kristalize cila işlemimizle pürüzsüz ve ayna parlaklığında yüzeylere dönüştürüyoruz.</p>
             </div>
             
         </div>
     </section>
 
+    <!-- Modal (Resim Büyütme) Ekranı -->
     <div id="resimModal" class="modal">
         <span class="kapat">&times;</span>
         <img class="modal-icerik" id="buyukResim">
@@ -240,14 +293,14 @@ body {
         var modalImg = document.getElementById("buyukResim");
         var kapatButonu = document.getElementsByClassName("kapat")[0];
 
-        // Sayfadaki tüm resimleri buluyoruz
-        var resimler = document.querySelectorAll(".resim-alani img");
+        // Hem üstteki 3 resim hem de alttaki büyük resim için seçici
+        var resimler = document.querySelectorAll(".resim-alani img, .buyutulebilir");
 
         // Her resme tıklandığında çalışacak fonksiyon
         resimler.forEach(function(img) {
             img.onclick = function(){
-                modal.style.display = "block"; // Modalı göster
-                modalImg.src = this.src; // Tıklanan resmin adresini büyük kutuya kopyala
+                modal.style.display = "block";
+                modalImg.src = this.src; 
             }
         });
 
