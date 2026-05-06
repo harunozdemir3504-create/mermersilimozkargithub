@@ -13,23 +13,33 @@
     <title>Özkar Mermer | Premium Doğal Taşlar</title>
     <link rel="stylesheet" href="style.css">
     <style>
-    
-    /* --- KOLEKSİYON 4'LÜ KART DÜZELTMESİ --- */
+    /* --- KOLEKSİYON 4. KARTI SOLA HİZALAMA --- */
     .galeri {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important; /* Kartları ortalar */
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* Kesin olarak 3 sütun yapar */
         gap: 30px !important;
         width: 100%;
         padding: 20px 0;
     }
 
     .kart {
-        flex: 1 1 calc(25% - 30px) !important; /* Geniş ekranda 4'lü yan yana */
-        min-width: 280px !important; /* Ekran küçülünce 2x2 veya alt alta geçmesini sağlar */
-        max-width: 350px !important; /* Kartların çok fazla uzamasını engeller */
+        width: 100% !important;
         margin: 0 !important;
     }
+
+    /* Ekran küçüldüğünde (Tablet ve Telefon) bozulmaması için ufak bir ayar: */
+    @media (max-width: 992px) {
+        .galeri {
+            grid-template-columns: repeat(2, 1fr) !important; /* Tablette 2 üstte, 2 altta yapar */
+        }
+    }
+    @media (max-width: 768px) {
+        .galeri {
+            grid-template-columns: 1fr !important; /* Telefonda hepsini alt alta dizer */
+        }
+    }
+   
+ 
 
     /* Özkar Mermer Özel Tasarım */
     .ozkar-silim-container {
