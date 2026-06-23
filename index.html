@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        .mermer-kiyaslama-kutusu {
+      .mermer-kiyaslama-kutusu {
   position: relative;
   width: 100%;
-  max-width: 800px; /* Sitenin tasarımına göre büyüklüğü buradan ayarlayabilirsin */
+  max-width: 1200px; /* GENİŞLİK: Burayı 800px'den 1200px'e çıkardık, istersen daha da artırabilirsin */
+  height: 500px; /* BOY: Yüksekliği 500px olarak sabitledik, çok uzunsa 400px yapabilirsin */
   margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -23,7 +24,8 @@
 .mermer-kiyaslama-kutusu img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%; /* Fotoğrafın kutu yüksekliğine tam oturmasını sağlar */
+  object-fit: cover; /* Fotoğrafı ezmeden/sündürmeden kırparak kutuya sığdırır */
 }
 
 .resim-oncesi {
