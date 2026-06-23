@@ -488,6 +488,19 @@
         </div>
         <p class="tehlike-son-cagri">Mermeriniz değerlidir ve özel ilgi gerektirir. Riski değil, kaliteyi tercih edin. <strong>Özkar Mermer</strong> ile iletişime geçerek, taşlarınıza hak ettiği profesyonel bakımı sağlayın.</p>
     </div>
+<script>
+// Sayfa yüklendiğinde çalışmasını sağlıyoruz
+document.addEventListener('DOMContentLoaded', function() {
+  const kaydirici = document.getElementById('mermerKaydirici');
+  const oncesiResim = document.querySelector('.resim-oncesi');
 
+  // Kaydırıcı hareket ettikçe resmi güncelle
+  kaydirici.addEventListener('input', function(e) {
+    const deger = e.target.value;
+    // Resmin kesilme (clip-path) noktasını değiştirir
+    oncesiResim.style.clipPath = `polygon(0 0, ${deger}% 0, ${deger}% 100%, 0 100%)`;
+  });
+});
+</script>
 </body>
 </html>
