@@ -357,6 +357,34 @@
     border-radius: 8px 8px 0 0;
     display: block;
 }
+        .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px; /* Alttan ne kadar boşluk olacağı */
+    right: 40px;  /* Sağdan ne kadar boşluk olacağı */
+    background-color: #25d366; /* WhatsApp yeşili */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 9999; /* Diğer elementlerin üzerinde kalmasını sağlar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Fare üstüne gelince biraz büyümesi */
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+    fill: white;
+}
     </style>
 </head>
 <body class="koyu-tema">
