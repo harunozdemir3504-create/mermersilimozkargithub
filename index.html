@@ -76,21 +76,23 @@
         display: block;
     }
 
-    /* Ana Kutu: Sabit boy (height) sildik, sadece genişlik sınırı var */
+    /* --- ÖNCESİ / SONRASI KIYASLAMA KUTUSU (Genişletilmiş ve Orantılı) --- */
     .mermer-kiyaslama-kutusu {
       position: relative;
       width: 100%;
-      max-width: 600px;
+      max-width: 1000px;
       margin: 0 auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
       overflow: hidden;
+      background: #000;
     }
 
     .resim-sonrasi {
       display: block;
       width: 100%;
-      height: auto;
+      height: 480px;
+      object-fit: cover;
     }
 
     .resim-oncesi {
@@ -101,6 +103,30 @@
       height: 100%;
       object-fit: cover;
       clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    }
+
+    /* Üzerindeki Net Etiketler */
+    .kiyaslama-etiket {
+      position: absolute;
+      top: 20px;
+      padding: 6px 14px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border-radius: 4px;
+      z-index: 5;
+      letter-spacing: 1px;
+      pointer-events: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .etiket-oncesi {
+      left: 20px;
+      background-color: rgba(220, 53, 69, 0.85);
+      color: #fff;
+    }
+    .etiket-sonrasi {
+      right: 20px;
+      background-color: rgba(40, 167, 69, 0.85);
+      color: #fff;
     }
 
     .kaydirici {
@@ -121,14 +147,14 @@
     .kaydirici::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       background-color: white;
-      border: 3px solid #333;
+      border: 3px solid #b08d57;
       border-radius: 50%;
       cursor: ew-resize;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="black" d="M8 5v14l-7-7 7-7zm8 0v14l7-7-7-7z"/></svg>');
+      box-shadow: 0 0 12px rgba(0,0,0,0.6);
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%23b08d57" d="M8 5v14l-7-7 7-7zm8 0v14l7-7-7-7z"/></svg>');
       background-position: center;
       background-repeat: no-repeat;
     }
@@ -151,9 +177,11 @@
 
     @media (max-width: 992px) {
         .galeri { grid-template-columns: repeat(2, 1fr) !important; }
+        .resim-sonrasi { height: 380px; }
     }
     @media (max-width: 768px) {
         .galeri { grid-template-columns: 1fr !important; }
+        .resim-sonrasi { height: 300px; }
     }
 
     .ozkar-silim-container {
@@ -443,7 +471,6 @@
         fill: white;
     }
     
-    /* --- ORANTILANMIŞ MERMER REHBERİ STİLLERİ --- */
     .mermer-rehberi {
         font-family: Arial, sans-serif;
         background-color: #ffffff;
@@ -639,7 +666,10 @@
         <p style="color: #b08d57; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase;">Özkar Mermer Farkını Kendi Gözlerinizle Görün</p>
     </div>
 
+    <!-- Öncesi / Sonrası Kıyaslama Kutusu (Net Etiketli ve Orantılı) -->
     <div class="mermer-kiyaslama-kutusu">
+      <span class="kiyaslama-etiket etiket-oncesi">ÖNCESİ</span>
+      <span class="kiyaslama-etiket etiket-sonrasi">SONRASI</span>
       <img src="after1.jpeg" alt="Mermer Silim Sonrası" class="resim-sonrasi">
       <img src="before.jpeg" alt="Mermer Silim Öncesi" class="resim-oncesi">
       <input type="range" min="0" max="100" value="50" class="kaydirici" id="mermerKaydirici">
@@ -713,7 +743,6 @@
         <p class="tehlike-son-cagri">Mermeriniz değerlidir ve özel ilgi gerektirir. Riski değil, kaliteyi tercih edin. <strong>Özkar Mermer</strong> ile iletişime geçerek, taşlarınıza hak ettiği profesyonel bakımı sağlayın.</p>
     </div>
 
-    <!-- Orantılanmış Mermer Rehberi Bölümü -->
     <div class="mermer-rehberi">
       <div class="rehberi-baslik-alani">
           <h2>Mermer Nasıl Silinir ve Parlatılır?</h2>
