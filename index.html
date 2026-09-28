@@ -443,68 +443,91 @@
         fill: white;
     }
     
+    /* --- ORANTILANMIŞ MERMER REHBERİ STİLLERİ --- */
     .mermer-rehberi {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f9f9f9;
-        border-radius: 8px;
-        padding: 30px;
-        max-width: 800px;
-        margin: 20px auto;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 40px;
+        max-width: 1000px;
+        margin: 50px auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         color: #333;
     }
+    .mermer-rehberi .rehberi-baslik-alani {
+        text-align: center;
+        margin-bottom: 30px;
+    }
     .mermer-rehberi h2 {
-        color: #2c3e50;
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 10px;
-        margin-top: 0;
+        font-size: 2.3rem;
+        color: #b08d57;
+        margin-bottom: 15px;
+        font-weight: 700;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .mermer-rehberi .rehberi-ayrac {
+        width: 100px;
+        height: 3px;
+        background: #1a1a1a;
+        margin: 0 auto 20px;
     }
     .mermer-rehberi h3 {
-        color: #34495e;
-        margin-top: 25px;
+        color: #1a1a1a;
+        font-size: 1.5rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
     }
     .mermer-rehberi p {
-        line-height: 1.6;
-        font-size: 16px;
+        line-height: 1.7;
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 20px;
     }
     .mermer-adimlari {
         list-style-type: none;
         padding: 0;
     }
     .mermer-adimlari li {
-        background: #fff;
+        background: #f9f9f9;
         margin-bottom: 15px;
-        padding: 15px;
-        border-left: 4px solid #3498db;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        padding: 20px;
+        border-left: 5px solid #b08d57;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
     .mermer-adimlari li strong {
-        color: #2980b9;
-        font-size: 17px;
+        color: #1a1a1a;
+        font-size: 1.2rem;
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
     }
     .mermer-cta {
-        background-color: #e8f4fd;
-        padding: 20px;
+        background-color: #fcf9f2;
+        border: 1px solid #f0e6d2;
+        padding: 30px;
         text-align: center;
-        border-radius: 6px;
-        margin-top: 30px;
+        border-radius: 10px;
+        margin-top: 40px;
+    }
+    .mermer-cta h3 {
+        margin-top: 0;
+        color: #b08d57;
     }
     .mermer-btn {
         display: inline-block;
-        background-color: #3498db;
+        background-color: #1a1a1a;
         color: #fff;
-        padding: 12px 24px;
+        padding: 12px 28px;
         text-decoration: none;
         font-weight: bold;
-        border-radius: 4px;
+        border-radius: 6px;
         transition: background 0.3s;
-        margin-top: 10px;
+        margin-top: 15px;
     }
     .mermer-btn:hover {
-        background-color: #2980b9;
+        background-color: #b08d57;
+        color: #000;
     }
     </style>
 </head>
@@ -518,7 +541,7 @@
             </div>
             <div id="silimDropdown" class="dropdown-content">
                 <a href="#izmir-merkez" onclick="toggleSilimMenu()">📍 İzmir Merkez Mermer Silim</a>
-                <a href="#izmir-merkez" onclick="toggleSilimMenu()"> Ege Mermer Silim </a>
+                <a href="#ege-mermer-silim" onclick="toggleSilimMenu()">✨ Ege Mermer Silim</a>
                 <a href="#konak-silim" onclick="toggleSilimMenu()">Konak Mermer Silim</a>
                 <a href="#karsiyaka-silim" onclick="toggleSilimMenu()">Karşıyaka Mermer Silim</a>
                 <a href="#bornova-silim" onclick="toggleSilimMenu()">Bornova Mermer Silim</a>
@@ -690,9 +713,13 @@
         <p class="tehlike-son-cagri">Mermeriniz değerlidir ve özel ilgi gerektirir. Riski değil, kaliteyi tercih edin. <strong>Özkar Mermer</strong> ile iletişime geçerek, taşlarınıza hak ettiği profesyonel bakımı sağlayın.</p>
     </div>
 
+    <!-- Orantılanmış Mermer Rehberi Bölümü -->
     <div class="mermer-rehberi">
-      <h2>Mermer Nasıl Silinir ve Parlatılır?</h2>
-      <p>Zamanla kullanıma bağlı olarak mermer yüzeyler matlaşabilir, çizilebilir ve ilk günkü ışıltısını kaybedebilir. Doğru silim ve parlatma teknikleriyle mermerlerinizi yenilemek mümkündür.</p>
+      <div class="rehberi-baslik-alani">
+          <h2>Mermer Nasıl Silinir ve Parlatılır?</h2>
+          <div class="rehberi-ayrac"></div>
+          <p>Zamanla kullanıma bağlı olarak mermer yüzeyler matlaşabilir, çizilebilir ve ilk günkü ışıltısını kaybedebilir. Doğru silim ve parlatma teknikleriyle mermerlerinizi yenilemek mümkündür.</p>
+      </div>
       
       <h3>Adım Adım Mermer Parlatma</h3>
       <ul class="mermer-adimlari">
@@ -702,7 +729,7 @@
         </li>
         <li>
           <strong>2. Elmas Pedlerle Silim (Zımparalama)</strong>
-          Mermer yüzeyindeki çizikleri ve aşınmaları yok etmek için farklı kalınlıklardaki elmas pedler kullanılarak sulu silim işlemi yapılır. Bu adım, yüzeyi pürüzsüzleştirir.
+          Mermer yüzeyindeki çizikleri ve aşınmaları yok etmek için farklı kalınlıktaki elmas pedler kullanılarak sulu silim işlemi yapılır. Bu adım, yüzeyi pürüzsüzleştirir.
         </li>
         <li>
           <strong>3. Cila ve Parlatma Aşaması</strong>
