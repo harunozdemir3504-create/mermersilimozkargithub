@@ -17,12 +17,12 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
+        padding: 15px 20px;
     }
 
     .dropdown-menu-container {
         position: relative;
         display: inline-block;
-        margin-right: 15px;
         flex: 1;
     }
 
@@ -38,6 +38,7 @@
         border-radius: 4px;
         transition: background 0.3s;
         width: fit-content;
+        white-space: nowrap;
     }
 
     .menu-toggle:hover {
@@ -88,7 +89,7 @@
 
     /* Tam Ortalı ve Renkli Logo Stili */
     .logo { 
-        font-size: 36px !important;
+        font-size: 32px !important;
         font-weight: 800;
         color: #ffffff; 
         text-align: center;
@@ -96,49 +97,70 @@
         display: flex;
         justify-content: center;
         text-decoration: none;
+        white-space: nowrap;
     }
 
     .logo span {
-        color: #d4af37; /* Özkar Mermer orijinal sarı/altın vurgu rengi */
-        margin-left: 5px;
+        color: #d4af37;
+        margin-left: 4px;
     }
 
     .menu { 
         display: flex !important;
         flex-direction: row !important;
-        gap: 20px;
+        gap: 15px;
         align-items: center;
         flex: 1;
         justify-content: flex-end;
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
+    .menu a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    /* --- MÜKEMMEL MOBİL UYUM (768px Altı) --- */
     @media (max-width: 768px) {
         .navbar {
             flex-direction: column !important;
-            align-items: center;
-            gap: 15px;
+            align-items: center !important;
+            gap: 12px;
+            padding: 15px 10px;
         }
         .dropdown-menu-container {
             width: 100%;
             display: flex;
             justify-content: center;
+            flex: none;
         }
         .menu-toggle {
             width: 100%;
             justify-content: center;
         }
         .logo {
-            font-size: 32px !important;
-            text-align: center;
+            flex: none;
+            font-size: 28px !important;
         }
         .menu {
             justify-content: center;
             width: 100%;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
+            flex: none;
         }
         .menu a {
             font-size: 14px;
+        }
+        .mermer-kiyaslama-kutusu {
+            max-width: 92% !important;
+            margin: 0 auto;
+        }
+        .resim-sonrasi {
+            height: 260px !important;
         }
     }
 
@@ -173,9 +195,9 @@
 
     .kiyaslama-etiket {
       position: absolute;
-      top: 20px;
-      padding: 6px 14px;
-      font-size: 0.9rem;
+      top: 15px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
       font-weight: bold;
       border-radius: 4px;
       z-index: 5;
@@ -184,12 +206,12 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
     .etiket-oncesi {
-      left: 20px;
+      left: 15px;
       background-color: rgba(220, 53, 69, 0.85);
       color: #fff;
     }
     .etiket-sonrasi {
-      right: 20px;
+      right: 15px;
       background-color: rgba(40, 167, 69, 0.85);
       color: #fff;
     }
@@ -232,6 +254,8 @@
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
 
     .kart {
@@ -246,23 +270,23 @@
     }
     @media (max-width: 768px) {
         .galeri { grid-template-columns: 1fr !important; }
-        .resim-sonrasi { height: 300px; }
     }
 
     .ozkar-silim-container {
         background: #ffffff;
-        padding: 60px 25px;
+        padding: 40px 20px;
         max-width: 1000px;
         margin: 40px auto;
         border-radius: 20px;
         box-shadow: 0 15px 35px rgba(0,0,0,0.08);
         border-top: 5px solid #1a1a1a;
+        box-sizing: border-box;
     }
 
     .ozkar-logo-baslik {
         font-family: 'Times New Roman', serif;
         color: #1a1a1a;
-        font-size: 2.8rem;
+        font-size: 2.4rem;
         text-align: center;
         margin: 0 auto;
         letter-spacing: 4px;
@@ -272,7 +296,7 @@
 
     .hizmet-alt-baslik {
         color: #b08d57;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         text-align: center;
         margin-top: 5px;
         font-weight: 300;
@@ -290,14 +314,14 @@
     .ozkar-metin-alani p {
         text-align: center;
         color: #555;
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         line-height: 1.8;
         margin-bottom: 40px;
     }
 
     .ozkar-ozellikler {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 25px;
         margin-bottom: 40px;
     }
@@ -338,7 +362,7 @@
 
     .ozkar-slogan {
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-style: italic;
         color: #b08d57;
         margin-top: 40px;
@@ -350,11 +374,12 @@
     .tehlike-bilgi-container {
         max-width: 1000px;
         margin: 50px auto;
-        padding: 40px;
+        padding: 30px 20px;
         background: #fff;
         border-radius: 12px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         font-family: Arial, sans-serif;
+        box-sizing: border-box;
     }
 
     .tehlike-baslik-alani {
@@ -363,7 +388,7 @@
     }
 
     .tehlike-baslik {
-        font-size: 2.3rem;
+        font-size: 2rem;
         color: #b08d57;
         margin-bottom: 15px;
         font-weight: 700;
@@ -377,7 +402,7 @@
     }
 
     .tehlike-giris {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         color: #555;
         line-height: 1.7;
         margin-bottom: 30px;
@@ -385,29 +410,29 @@
 
     .tehlike-icerik-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
     }
 
     .tehlike-madde {
         background: #f9f9f9;
-        padding: 30px;
+        padding: 25px;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         border-left: 5px solid #b08d57;
     }
 
     .madde-baslik {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: #1a1a1a;
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         border-bottom: 1px solid #eee;
         padding-bottom: 10px;
     }
 
     .tehlike-madde p {
-        font-size: 1rem;
+        font-size: 0.95rem;
         color: #666;
         line-height: 1.6;
         margin-bottom: 15px;
@@ -424,7 +449,7 @@
 
     .resim-yerlesimi img {
         width: 100%;
-        max-width: 450px;
+        max-width: 400px;
         height: auto;
         border-radius: 8px;
         border: 1px solid #ddd;
@@ -432,7 +457,7 @@
     }
 
     .resim-aciklama {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: #888;
         margin-top: 10px;
         font-style: italic;
@@ -440,10 +465,10 @@
 
     .tehlike-son-cagri {
         text-align: center;
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         color: #1a1a1a;
-        margin-top: 50px;
-        padding-top: 30px;
+        margin-top: 40px;
+        padding-top: 25px;
         border-top: 1px dashed #ddd;
         font-weight: 600;
     }
@@ -462,10 +487,10 @@
 
     .whatsapp-float {
         position: fixed;
-        height: 60px;
-        padding: 0 20px;
-        bottom: 40px;
-        right: 40px;
+        height: 55px;
+        padding: 0 18px;
+        bottom: 25px;
+        right: 25px;
         background-color: #25d366;
         color: #FFF;
         border-radius: 50px;
@@ -486,13 +511,13 @@
     .whatsapp-text {
         font-family: Arial, sans-serif;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 15px;
         white-space: nowrap;
     }
 
     .whatsapp-icon {
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
         fill: white;
     }
     
@@ -500,18 +525,19 @@
         font-family: Arial, sans-serif;
         background-color: #ffffff;
         border-radius: 12px;
-        padding: 40px;
+        padding: 35px 20px;
         max-width: 1000px;
         margin: 50px auto;
         box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         color: #333;
+        box-sizing: border-box;
     }
     .mermer-rehberi .rehberi-baslik-alani {
         text-align: center;
         margin-bottom: 30px;
     }
     .mermer-rehberi h2 {
-        font-size: 2.3rem;
+        font-size: 2rem;
         color: #b08d57;
         margin-bottom: 15px;
         font-weight: 700;
@@ -526,13 +552,13 @@
     }
     .mermer-rehberi h3 {
         color: #1a1a1a;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin-top: 30px;
         margin-bottom: 15px;
     }
     .mermer-rehberi p {
         line-height: 1.7;
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         color: #555;
         margin-bottom: 20px;
     }
@@ -550,14 +576,14 @@
     }
     .mermer-adimlari li strong {
         color: #1a1a1a;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         display: block;
         margin-bottom: 8px;
     }
     .mermer-cta {
         background-color: #fcf9f2;
         border: 1px solid #f0e6d2;
-        padding: 30px;
+        padding: 25px 15px;
         text-align: center;
         border-radius: 10px;
         margin-top: 40px;
@@ -715,7 +741,7 @@
                     <div class="ozkar-madde">
                         <span class="ozkar-ikon">💎</span>
                         <div class="ozkar-madde-metin">
-                            <strong>Kusursuz Silim:</strong> İtalyan makineler and elmas pedler kullanarak yüzeydeki çizikleri ve pürüzleri moleküler düzeyde yok ediyoruz.
+                            <strong>Kusursuz Silim:</strong> İtalyan makineler ve elmas pedler kullanarak yüzeydeki çizikleri ve pürüzleri moleküler düzeyde yok ediyoruz.
                         </div>
                     </div>
                     <div class="ozkar-madde">
